@@ -1,0 +1,45 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+.button {
+    width: 35vw;
+    height: 55vh;
+    margin-left: 10%;
+}
+.your {
+    color: #000000;
+    width: 35vw;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 300%;
+    align-items: center;
+    line-height: 50px;
+}
+.give {
+    width: 30vw;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 100%;
+    line-height: 163.15%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.more {
+    display: flex;
+}
+.learn {
+    font-size: 90%;
+    font-weight: 600;
+    color: #4da0fd;
+    text-decoration: underline;
+}
+.arrow {
+    color: #4da0fd;
+    margin-left: 2%;
+}
