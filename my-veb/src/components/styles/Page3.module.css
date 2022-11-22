@@ -3,7 +3,6 @@
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     background-color: white;
 }
 .button {
@@ -40,5 +39,5 @@
 }
 .arrow {
     color: #4da0fd;
-    margin-left: 2%;
+    margin-left: 1%;
 }

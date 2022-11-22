@@ -1,0 +1,82 @@
+{
+    "links": [
+        {
+            "name": "Instagram"
+        },
+        {
+            "name": "Facebook"
+        },
+        {
+            "name": "Twitter"
+        },
+        {
+            "name": "Instagram"
+        },
+        {
+            "name": "Facebook"
+        },
+        {
+            "name": "Twitter"
+        }
+    ],
+    "cases": [
+        {
+            "name": "UI Design"
+        },
+        {
+            "name": "UX Design"
+        },
+        {
+            "name": "Prototyping"
+        },
+        {
+            "name": "UI Design"
+        },
+        {
+            "name": "UX Design"
+        },
+        {
+            "name": "Prototyping"
+        }
+    ],
+    "resources": [
+        {
+            "name": "Community Resources Hub"
+        },
+        {
+            "name": "Support"
+        },
+        {
+            "name": "Education"
+        },
+        {
+            "name": "Community Resources Hub"
+        },
+        {
+            "name": "Support"
+        },
+        {
+            "name": "Education"
+        }
+    ],
+    "explore": [
+        {
+            "name": "Figma"
+        },
+        {
+            "name": "Customers"
+        },
+        {
+            "name": "Why I Love Figma"
+        },
+        {
+            "name": "Figma"
+        },
+        {
+            "name": "Customers"
+        },
+        {
+            "name": "Why I Love Figma"
+        }
+    ]
+}

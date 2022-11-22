@@ -3,13 +3,11 @@
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     background-color: white;
 }
 .button {
     width: 35vw;
     height: 55vh;
-    margin-left: 10%;
 }
 .your {
     color: #000000;

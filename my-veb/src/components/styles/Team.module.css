@@ -9,7 +9,6 @@
 }
 .home {
   margin-top: 10%;
-  margin-left: 10%;
   width: 35vw;
   height: 55vh;
 }
@@ -76,20 +75,19 @@
   color: #fff;
 }
 .container1 {
-  width: 366px;
-  height: 374px;
+  width: 20vw;
+  height: 32vh;
   margin: 5%;
-  padding: 1px;
+  line-height: 70px;
   box-shadow: 0px 0px 30px -9px rgba(0, 0, 0, 0.75);
 }
 
 .stars {
   margin-left: 7%;
-  margin-top: 7%;
 }
 
 .star0 {
-  color: grey;
+  color: orange;
 }
 
 .star1 {
@@ -99,28 +97,29 @@
 .textt {
   font-style: normal;
   font-weight: 450;
-  font-size: 18px;
-  width: 291px;
-  height: 154px;
+  font-size: 100%;
+  width: 15vw;
+  height: 10vh;
   margin-left: 8%;
-  margin-top: 7%;
   line-height: 30px;
 }
 
 .profile {
   width: 50px;
   height: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
 }
 
 .bruhh {
   display: flex;
-  margin-top: 30px;
-  margin-left: 40px;
+  align-items: center;
+  margin-top: 10%;
+  margin-left: 7%;
 }
 
 .name {
-  font-size: 18px;
-  margin-top: 15px;
-  margin-left: 25px;
+  font-size: 100%;
   font-weight: 700;
+  margin-left: 5%;
 }
