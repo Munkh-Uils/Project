@@ -11,10 +11,14 @@ export const Footer = () => {
             {/* {new Array(6).fill(0).map(() => (
               <p>Facebook</p>
             ))} */}
-            <div className={styles.logo} />
+            <p style={{ marginBottom: "4vh", color: "#252b3b" }}>A</p>
             {data.links.map((props) => (
               <p>{props.name}</p>
             ))}
+            {/* <div className={styles.logo} />
+            {data.links.map((props) => (
+              <p>{props.name}</p>
+            ))} */}
           </div>
           <div>
             {/* {new Array(6).fill(0).map(() => (

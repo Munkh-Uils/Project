@@ -6,7 +6,6 @@ import { Container } from "react-bootstrap";
 export const Page3 = () => {
   return (
     <div className={styles.container}>
-      <Container>
         <img className={styles.image} src={group}></img>
         <div className={styles.button}>
           <h1 className={styles.your}>Simple task management</h1>
@@ -21,7 +20,6 @@ export const Page3 = () => {
             <BsArrowRight className={styles.arrow} />
           </div>
         </div>
-      </Container>
     </div>
   );
 };

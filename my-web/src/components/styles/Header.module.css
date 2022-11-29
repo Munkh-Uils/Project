@@ -4,6 +4,15 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
+    width: 100vw;
+    height: 10vh;
+}
+.containerBg {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
     background-color: rgb(92, 92, 92);
     width: 100vw;
     height: 10vh;

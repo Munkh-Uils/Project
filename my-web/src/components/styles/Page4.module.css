@@ -3,6 +3,7 @@
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     background-color: white;
 }
 /* .button {
@@ -19,7 +20,7 @@
     line-height: 50px;
 }
 .give {
-    width: 20vw;
+    width: 25vw;
     font-style: normal;
     font-weight: 600;
     font-size: 100%;
