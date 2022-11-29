@@ -83,7 +83,7 @@ export const Team = () => {
                 What people say about us
               </span>
             </h1>
-            <div className={styles.cards}>
+            <div className={styles.cards}>cd
               <div
                 style={{
                   transform: `translateX(${-10 * pos}%)`,
