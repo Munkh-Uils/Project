@@ -5,7 +5,6 @@ import { FaStar } from "react-icons/fa";
 import { Page2 } from "./Page2";
 import { Page3 } from "./Page3";
 import { Page4 } from "./Page4";
-import { Footer } from "./Footer";
 import axios from "axios";
 import { Container, Button, Spinner } from "react-bootstrap";
 
@@ -17,7 +16,7 @@ export const Team = () => {
   const [pos, setPos] = useState(0);
 
   const goRight = () => {
-    if (pos < 40) {
+    if (pos < 20) {
       setPos((prev) => prev + 1);
     }
   };
@@ -59,21 +58,27 @@ export const Team = () => {
           </div>
         </div>
       </div>
-      <div className={styles.zai}></div>
+      <div
+        className={
+          theme.pallate.dark ? `${styles.zai} ${styles.dark}` : styles.zai
+        }
+      ></div>
       <Page2 />
       <Page3 />
       <Page4 />
       <div className={styles.sectionTwo}>
-        <div style={{transition: "500ms", }}
+        <div
+          style={{ transition: "500ms" }}
           className={
             theme.pallate.dark
               ? `${styles.ContainerBottom} ${styles.dark}`
               : styles.ContainerBottom
           }
         >
-          <Container>
+          <Container style={{ height: "80vh" }}>
             <h1 className={styles.what}>
-              <span style={{transition: "500ms", }}
+              <span
+                style={{ transition: "500ms" }}
                 className={
                   theme.pallate.dark
                     ? `${styles.titleSecond} ${styles.textWhite}`
@@ -83,52 +88,65 @@ export const Team = () => {
                 What people say about us
               </span>
             </h1>
-            <div className={styles.cards}>cd
+            <div className={styles.cards}>
               <div
                 style={{
-                  transform: `translateX(${-10 * pos}%)`,
+                  transform: `translateX(${-20 * pos}%)`,
                   transition: "300ms",
                   display: "flex",
-                  // overflow:"hidden",
                 }}
               >
                 {!data && <Spinner />}
-                {data && data.data.map((item) => <Item {...item} key={item} />)}
+                {data &&
+                  data.data.map((item, index) => {
+                    if (index > 7) {
+                      return;
+                    }
+                    return <Item {...item} />;
+                  })}
               </div>
             </div>
-            <div style={{ marginBottom: 100 }}>
+            <div>
               <Button onClick={goLeft}>Left</Button>
               <Button onClick={goRight}>Right</Button>
             </div>
           </Container>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
 
 export const Item = (props) => {
-  console.log(props);
+  const { theme, changeDarkTheme } = useContext(ThemeContext);
+
   const stars = Array(5).fill(0);
   for (let i = 0; i < props.too; i++) {
     stars[i] = 1;
   }
   return (
     <div className={styles.container1}>
-      <div className={styles.stars}>
-        {stars.map((item) => (
-          <FaStar className={styles["star" + item]} />
-        ))}
-      </div>
-      <div className={styles.textt}>
-        Give everyone you work with—inside and outside your emoji, keep
-        conversations focused in channels, and simplify all your communication
-        into one place.
-      </div>
-      <div className={styles.bruhh}>
-        <div className={styles.profile} src={props.owner.picture}></div>
-        <div className={styles.name}>Amy Klassen</div>
+      <div
+        className={
+          theme.pallate.dark
+            ? `${styles.ContainerBottom} ${styles.white}`
+            : `${styles.ContainerBottom} ${styles.white}`
+        }
+      >
+        <div className={styles.stars}>
+          {stars.map((item) => {
+            return <FaStar className={styles["star" + item]} />;
+          })}
+        </div>
+        <div className={styles.textt}>
+          Give everyone you work with—inside and outside your emoji, keep
+          conversations focused in channels, and simplify all your communication
+          into one place.
+        </div>
+        <div className={styles.bruhh}>
+          <div className={styles.profile} src={props.owner.picture}></div>
+          <div className={styles.name}>Amy Klassen</div>
+        </div>
       </div>
     </div>
   );

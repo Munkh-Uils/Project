@@ -1,14 +1,36 @@
 import styles from "../styles/Cord.module.css";
-import { Container } from "react-bootstrap";
+import { useContext } from "react";
+import { ThemeContext } from "../../App";
 
 const Cord = (props) => {
+  const { theme, changeDarkTheme } = useContext(ThemeContext);
   console.log(props);
   return (
-    <div className={styles.container}>
+    <div
+      className={
+        theme.pallate.dark
+          ? `${styles.container} ${styles.dark}`
+          : styles.container
+      }
+    >
       <img className={styles.image} src={props.image}></img>
       <div className={styles.blaa}>
-        <div className={styles.data}>{props.text}</div>
-        <div className={styles.our}>
+        <div
+          className={
+            theme.pallate.dark
+              ? `${styles.data} ${styles.textWhite}`
+              : `${styles.data} ${styles.textDefault}`
+          }
+        >
+          {props.text}
+        </div>
+        <div
+          className={
+            theme.pallate.dark
+              ? `${styles.our} ${styles.textWhite}`
+              : `${styles.our} ${styles.textDefault}`
+          }
+        >
           It’s 2020, but women designers still face lower pay and less
           opportunity. What gives?
         </div>

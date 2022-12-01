@@ -1,58 +1,65 @@
 body {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    width: 363px;
-    height: 465px;
-    border-radius: 10%;
-    background-color: white;
-    box-shadow: 0px 0px 30px -9px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  width: 363px;
+  height: 465px;
+  border-radius: 10%;
+  background-color: white;
+  transition: 500ms;
+  box-shadow: 0px 0px 30px -9px rgba(0, 0, 0, 0.75);
+}
+.textWhite {
+  color: white;
+  transition: 500ms;
 }
 .image {
-    width: 100%;
-    height: 35%;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
+  width: 100%;
+  height: 35%;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
 }
 .blaa {
-    width: 330px;
-    padding: 7%;
-    height: 58px;
-    font-style: normal;
-    font-weight: 500;
-    color: #25313C;
+  width: 330px;
+  padding: 7%;
+  height: 58px;
+  font-style: normal;
+  font-weight: 500;
+  color: #25313c;
 }
 .data {
-    font-style: normal;
-    font-size: 150%;
-    font-weight: 500;
-    margin-bottom: 7%;
-    width: 120%;
-    line-height: 120%;
-    color: #25313c;
+  font-style: normal;
+  font-size: 150%;
+  font-weight: 500;
+  margin-bottom: 7%;
+  width: 120%;
+  line-height: 120%;
 }
 .our {
-    font-weight: 500;
-    font-size: 80%;
-    width: 120%;
-    color: #25313c;
+  font-weight: 500;
+  font-size: 80%;
+  width: 120%;
 }
 .pro {
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
 }
 .bruhh {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 9vh;
-    color: #6d7d8b;
-    font-size: 12px;
-    width: 100vw;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 9vh;
+  color: #6d7d8b;
+  font-size: 12px;
+  width: 100vw;
+}
+.dark {
+  background-color: rgb(14, 14, 14);
+  transition: 500;
 }
 /* .name {
     margin-left: 2%;

@@ -7,6 +7,7 @@ import Services from "./components/pages/Services";
 import Contact from "./components/pages/Contact";
 import Login from "./components/pages/Login";
 import GetAccess from "./components/pages/GetAccess";
+import { Footer } from "./components/Footer";
 import { createContext, useState } from "react";
 
 export const ThemeContext = createContext({});
@@ -16,8 +17,7 @@ function App() {
   function setFix() {
     if (window.scrollY <= 0) {
       setBg(false);
-    }
-    else {
+    } else {
       setBg(true);
     }
   }
@@ -29,13 +29,16 @@ function App() {
   });
 
   const changeDarkTheme = () => {
-    setTheme({ ...theme, pallate: {dark: !theme.pallate.dark} });
-  }
+    setTheme({ ...theme, pallate: { dark: !theme.pallate.dark } });
+  };
 
   return (
-    <ThemeContext.Provider value={{
-      theme, changeDarkTheme
-    }}>
+    <ThemeContext.Provider
+      value={{
+        theme,
+        changeDarkTheme,
+      }}
+    >
       <BrowserRouter>
         <Header />
         <Routes>
@@ -47,6 +50,7 @@ function App() {
           <Route path="/GetAccess" element={<GetAccess />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </ThemeContext.Provider>
   );
 }

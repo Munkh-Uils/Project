@@ -19,16 +19,32 @@ export const Header = () => {
       <div className={styles.pages}>
         <Form.Check type="switch" id="custom-switch" onClick={changeDarkTheme}/>
         <Link to="/products">
-          <div className={styles.page}>Products</div>
+          <div className={
+            theme.pallate.dark
+              ? `${styles.page} ${styles.textWhite}`
+              : `${styles.page} ${styles.textDefault}`
+          }>Products</div>
         </Link>
         <Link to="/services">
-          <div className={styles.page}>Services</div>
+          <div className={
+            theme.pallate.dark
+              ? `${styles.page} ${styles.textWhite}`
+              : `${styles.page} ${styles.textDefault}`
+          }>Services</div>
         </Link>
         <Link to="/contact">
-          <div className={styles.page}>Contact</div>
+          <div className={
+            theme.pallate.dark
+              ? `${styles.page} ${styles.textWhite}`
+              : `${styles.page} ${styles.textDefault}`
+          }>Contact</div>
         </Link>
         <Link to="/login">
-          <div className={styles.page}>Log in</div>
+          <div className={
+            theme.pallate.dark
+              ? `${styles.page} ${styles.textWhite}`
+              : `${styles.page} ${styles.textDefault}`
+          }>Log in</div>
         </Link>
         <Link to="/getaccess">
           <div className={styles.access}>Get Access</div>

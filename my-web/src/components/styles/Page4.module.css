@@ -1,44 +1,53 @@
 .container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  transition: 500ms;
 }
 /* .button {
     width: 5vw;
     height: 55vh;
 } */
 .your {
-    width: 20vw;
-    color: #000000;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 300%;
-    align-items: center;
-    line-height: 50px;
+  width: 20vw;
+  color: #000000;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 300%;
+  align-items: center;
+  line-height: 50px;
+  transition: 500ms;
 }
 .give {
-    width: 25vw;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 100%;
-    line-height: 163.15%;
-    display: flex;
-    align-items: center;
-    color: #000000;
+  width: 25vw;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 100%;
+  line-height: 163.15%;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  transition: 500ms;
 }
 .more {
-    display: flex;
+  display: flex;
 }
 .learn {
-    font-size: 90%;
-    font-weight: 600;
-    color: #4da0fd;
-    text-decoration: underline;
+  font-size: 90%;
+  font-weight: 600;
+  color: #4da0fd;
+  text-decoration: underline;
 }
 .arrow {
-    color: #4da0fd;
-    margin-left: 2%;
+  color: #4da0fd;
+  margin-left: 2%;
+}
+.dark {
+  background-color: rgb(14, 14, 14);
+}
+.textWhite {
+  color: white;
 }

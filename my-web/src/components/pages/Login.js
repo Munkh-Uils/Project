@@ -1,12 +1,27 @@
-import styles from "../styles/Login.module.css"
+import styles from "../styles/Login.module.css";
+import { useContext } from "react";
+import { ThemeContext } from "../../App";
 
 const Login = () => {
-    return (
-        <div className={styles.container}>
-            <div className={styles.login}>
-                Login    
-            </div>
-        </div>
-    );
+  const { theme, changeDarkTheme } = useContext(ThemeContext);
+  return (
+    <div
+      className={
+        theme.pallate.dark
+          ? `${styles.container} ${styles.dark}`
+          : styles.container
+      }
+    >
+      <div
+        className={
+          theme.pallate.dark
+            ? `${styles.login} ${styles.textWhite}`
+            : styles.login
+        }
+      >
+        Login
+      </div>
+    </div>
+  );
 };
 export default Login;

@@ -1,9 +1,17 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: 500ms;
 }
 .login {
-    font-size: 10rem;
+  font-size: 10rem;
+  transition: 500ms;
+}
+.dark {
+  background-color: rgb(14, 14, 14);
+}
+.textWhite {
+  color: white;
 }

@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: space-around;
     background-color: white;
+    transition: 500ms;
 }
 .your {
     color: #000000;
@@ -14,6 +15,7 @@
     font-size: 300%;
     align-items: center;
     line-height: 50px;
+    transition: 500ms;
 }
 .give {
     width: 25vw;
@@ -24,6 +26,7 @@
     display: flex;
     align-items: center;
     color: #000000;
+    transition: 500ms;
 }
 .more {
     display: flex;
@@ -38,3 +41,9 @@
     color: #4da0fd;
     margin-left: 1%;
 }
+.dark {
+    background-color: rgb(14, 14, 14);
+  }
+  .textWhite {
+    color: white;
+  }
