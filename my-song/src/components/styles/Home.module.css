@@ -1,0 +1,12 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  color: white;
+  width: 81.2vw;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  background-color: #121212;
+}
