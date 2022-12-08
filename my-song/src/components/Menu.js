@@ -81,7 +81,7 @@ export const Menu = () => {
           <Link to="myplaylist4" className={styles.link}>
             <div className={styles.playlist}>My Playlist #4</div>
           </Link>
-          <Link to="myplaylist5" className={styles.link}>
+          <Link to="myplaylist#5" className={styles.link}>
             <div className={styles.playlist}>My Playlist #5</div>
           </Link>
         </div>

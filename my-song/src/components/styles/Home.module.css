@@ -1,12 +1,37 @@
-.home {
+.container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 100px;
   color: white;
   width: 81.2vw;
   height: 100vh;
   position: absolute;
   right: 0;
-  background-color: #121212;
+  background-color: #171717;
+}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 3.5vh;
+  padding-right: 3.5vh;
+  width: 100vw;
+  height: 7vh;
+  /* background-color: rgb(5, 5, 5); */
+}
+.icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: rgb(134, 134, 134);
+  background-color: rgba(0,0,0,.7);
+}
+.icon2 {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: rgb(134, 134, 134);
+  background-color: rgba(0,0,0,.7);
+  margin-left: 15px;
+}
+.buser {
+  display: flex;
 }
