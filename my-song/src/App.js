@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Menu } from "./components/Menu";
 import { Home } from "./components/Home";
+import { Header } from "./components/Header";
 import Search from "./components/pages/Search";
 import YourLibrary from "./components/pages/YourLibrary";
 import CreatePlaylist from "./components/pages/CreatePlaylist";
@@ -17,6 +18,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Menu />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Search" element={<Search />} />

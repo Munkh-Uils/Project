@@ -1,37 +1,67 @@
 .container {
-  display: flex;
-  color: white;
-  width: 81.2vw;
-  height: 100vh;
-  position: absolute;
-  right: 0;
-  background-color: #171717;
-}
-.top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 3.5vh;
-  padding-right: 3.5vh;
   width: 100vw;
-  height: 7vh;
-  /* background-color: rgb(5, 5, 5); */
+  height: 100vh;
+  background-color: #1f1f1f;
 }
-.icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  color: rgb(134, 134, 134);
-  background-color: rgba(0,0,0,.7);
-}
-.icon2 {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  color: rgb(134, 134, 134);
-  background-color: rgba(0,0,0,.7);
-  margin-left: 15px;
-}
-.buser {
+.container2 {
   display: flex;
+  margin-left: 385px;
+  height: 1000vh;
+  background-color: #1f1f1f;
+}
+.buttons {
+  width: 100vw;
+  height: 1000vh;
+  margin-top: 65px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  color: white;
+}
+.button {
+  width: 100vw;
+  height: 385px;
+}
+.text {
+  font-size: 22px;
+  font-weight: 700;
+}
+.songs {
+  display: flex;
+  margin-top: 22px;
+  height: 287px;
+}
+.song {
+  transition: 500ms;
+  width: 212px;
+  height: 302px;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  margin-right: 22px;
+  padding: 15px;
+}
+.image {
+  border-radius: 5px;
+  width: 182px;
+  height: 182px;
+}
+.exp {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--font-family,CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif));;
+}
+.expmini {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgb(158, 158, 158);
+}
+.song:hover {
+  background-color:rgb(46, 46, 46);
+}
+.artist {
+  border-radius: 50%;
+  width: 182px;
+  height: 182px;
 }
