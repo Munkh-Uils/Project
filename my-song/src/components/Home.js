@@ -9,13 +9,6 @@ import top50global from "./assets/50.jpeg";
 import top50usa from "./assets/50usa.jpeg";
 import viral50global from "./assets/viral50global.jpeg";
 import viral50usa from "./assets/viral50usa.jpeg";
-import babyface from "./assets/babyface.jpeg";
-import faith from "./assets/faith.jpeg";
-import tamia from "./assets/tamia.jpeg";
-import emi from "./assets/emi.jpeg";
-import i from "./assets/i.jpeg";
-import love from "./assets/90s.jpeg";
-import control from "./assets/controll.jpeg";
 import anne from "./assets/anne.jpeg";
 import moira from "./assets/moira.jpeg";
 import john from "./assets/john.jpeg";
@@ -24,6 +17,26 @@ import ales from "./assets/ales.jpeg";
 import luka from "./assets/luka.jpeg";
 import anita from "./assets/anita.jpeg";
 import best from "./assets/best.jpeg";
+import best85 from "./assets/1985.jpeg";
+import soft from "./assets/80s.jpeg";
+import best80 from "./assets/best80.jpeg";
+import happy80 from "./assets/happy80.jpeg";
+import deep80 from "./assets/deep80.jpeg";
+import best87 from "./assets/best87.jpeg";
+import softpo from "./assets/softpop.jpeg";
+import chill from "./assets/chill.jpeg";
+import zone from "./assets/zone.jpeg";
+import aco from "./assets/aco.jpeg";
+import you from "./assets/you.jpeg";
+import softrock from "./assets/softrock.jpeg";
+import lofi from "./assets/lofi.jpeg";
+import shower from "./assets/shower.jpeg";
+import indie from "./assets/indie.jpeg";
+import karital from "./assets/karital.jpeg";
+import claold from "./assets/claold.jpeg";
+import karesp from "./assets/karesp.jpeg";
+import karhi from "./assets/karhi.jpeg";
+import pade from "./assets/pade.jpeg";
 
 export const Home = () => {
   return (
@@ -118,50 +131,12 @@ export const Home = () => {
               </div>
             </div>
           </div>
-          {/* More like Whitney Houston */}
-          <div className={styles.button}>
-            <h1 className={styles.text}>More like Whitney Houston</h1>
-            <div className={styles.songs}>
-              <div className={styles.song}>
-                <img className={styles.artist} src={babyface}></img>
-                <div className={styles.exp}>Babyface</div>
-                <p className={styles.expmini}>Artist</p>
-              </div>
-              <div className={styles.song}>
-                <img className={styles.artist} src={faith}></img>
-                <div className={styles.exp}>Faith Evans</div>
-                <p className={styles.expmini}>Artist</p>
-              </div>
-              <div className={styles.song}>
-                <img className={styles.artist} src={tamia}></img>
-                <div className={styles.exp}>Tamia</div>
-                <p className={styles.expmini}>Artist</p>
-              </div>
-              <div className={styles.song}>
-                <img className={styles.artist} src={emi}></img>
-                <div className={styles.exp}>Eminem</div>
-                <p className={styles.expmini}>Artist</p>
-              </div>
-              <div className={styles.song}>
-                <img className={styles.image} src={i}></img>
-                <div className={styles.exp}>I Love My '90s R&B</div>
-                <p className={styles.expmini}>The most essential R&B songs from the 90s. Cove...</p>
-              </div>
-              <div className={styles.song}>
-                <img className={styles.image} src={love}></img>
-                <div className={styles.exp}>90s Love Songs</div>
-                <p className={styles.expmini}>Tight Roll your jeans, break out the CK1, and set the...</p>
-              </div>
-              <div className={styles.song}>
-                <img className={styles.image} src={control}></img>
-                <div className={styles.exp}>Control: The Remixes</div>
-                <p className={styles.expmini}>Janet Jackson</p>
-              </div>
-            </div>
-          </div>
           {/* More like Ed Sheeran */}
           <div className={styles.button}>
-            <h1 className={styles.text}>More like Ed Sheeran</h1>
+            <div className={styles.texts}>
+              <h1 className={styles.text}>More like Ed Sheeran</h1>
+              <h1 className={styles.show}>SHOW ALL</h1>aksdfhjalskdj
+            </div>
             <div className={styles.songs}>
               <div className={styles.song}>
                 <img className={styles.artist} src={anne}></img>
@@ -205,37 +180,119 @@ export const Home = () => {
             <h1 className={styles.text}>More like All Out 80s</h1>
             <div className={styles.songs}>
               <div className={styles.song}>
-                <img className={styles.artist} src={best}></img>
+                <img className={styles.image} src={best}></img>
                 <div className={styles.exp}>Anne-Marie</div>
                 <p className={styles.expmini}>Artist</p>
               </div>
               <div className={styles.song}>
-                <img className={styles.artist} src={moira}></img>
+                <img className={styles.image} src={best85}></img>
                 <div className={styles.exp}>Moira Dela Torre</div>
                 <p className={styles.expmini}>Artist</p>
               </div>
               <div className={styles.song}>
-                <img className={styles.artist} src={john}></img>
+                <img className={styles.image} src={soft}></img>
                 <div className={styles.exp}>John Legend</div>
                 <p className={styles.expmini}>Artist</p>
               </div>
               <div className={styles.song}>
-                <img className={styles.artist} src={cam}></img>
+                <img className={styles.image} src={best80}></img>
                 <div className={styles.exp}>Camila Cabello</div>
                 <p className={styles.expmini}>Artist</p>
               </div>
               <div className={styles.song}>
-                <img className={styles.artist} src={ales}></img>
+                <img className={styles.image} src={happy80}></img>
                 <div className={styles.exp}>Alessia Cara</div>
                 <p className={styles.expmini}>Artist</p>
               </div>
               <div className={styles.song}>
-                <img className={styles.artist} src={luka}></img>
+                <img className={styles.image} src={deep80}></img>
                 <div className={styles.exp}>Lukas Graham</div>
                 <p className={styles.expmini}>Artist</p>
               </div>
               <div className={styles.song}>
-                <img className={styles.artist} src={anita}></img>
+                <img className={styles.image} src={best87}></img>
+                <div className={styles.exp}>Anita Baker</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+            </div>
+          </div>
+          {/* Chill */}
+          <div className={styles.button}>
+            <h1 className={styles.text}>Chill</h1>
+            <div className={styles.songs}>
+              <div className={styles.song}>
+                <img className={styles.image} src={softpo}></img>
+                <div className={styles.exp}>Anne-Marie</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+              <div className={styles.song}>
+                <img className={styles.image} src={chill}></img>
+                <div className={styles.exp}>Moira Dela Torre</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+              <div className={styles.song}>
+                <img className={styles.image} src={zone}></img>
+                <div className={styles.exp}>John Legend</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+              <div className={styles.song}>
+                <img className={styles.image} src={aco}></img>
+                <div className={styles.exp}>Camila Cabello</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+              <div className={styles.song}>
+                <img className={styles.image} src={you}></img>
+                <div className={styles.exp}>Alessia Cara</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+              <div className={styles.song}>
+                <img className={styles.image} src={softrock}></img>
+                <div className={styles.exp}>Lukas Graham</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+              <div className={styles.song}>
+                <img className={styles.image} src={lofi}></img>
+                <div className={styles.exp}>Anita Baker</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+            </div>
+          </div>
+          {/* Sing-along */}
+          <div className={styles.button}>
+            <h1 className={styles.text}>Sing-along</h1>
+            <div className={styles.songs}>
+              <div className={styles.song}>
+                <img className={styles.image} src={shower}></img>
+                <div className={styles.exp}>Anne-Marie</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+              <div className={styles.song}>
+                <img className={styles.image} src={indie}></img>
+                <div className={styles.exp}>Moira Dela Torre</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+              <div className={styles.song}>
+                <img className={styles.image} src={karital}></img>
+                <div className={styles.exp}>John Legend</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+              <div className={styles.song}>
+                <img className={styles.image} src={claold}></img>
+                <div className={styles.exp}>Camila Cabello</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+              <div className={styles.song}>
+                <img className={styles.image} src={karesp}></img>
+                <div className={styles.exp}>Alessia Cara</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+              <div className={styles.song}>
+                <img className={styles.image} src={karhi}></img>
+                <div className={styles.exp}>Lukas Graham</div>
+                <p className={styles.expmini}>Artist</p>
+              </div>
+              <div className={styles.song}>
+                <img className={styles.image} src={pade}></img>
                 <div className={styles.exp}>Anita Baker</div>
                 <p className={styles.expmini}>Artist</p>
               </div>
