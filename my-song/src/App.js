@@ -32,6 +32,7 @@ function App() {
           <Route path="/MyPlaylist5" element={<MyPlaylist5 />} />
         </Routes>
       </BrowserRouter>
+      {/* <Footer /> */}
     </div>
   );
 }
