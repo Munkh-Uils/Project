@@ -13,10 +13,11 @@ const Search = () => {
       })();
     }
   }, []);
-
   return (
     <div className={styles.container}>
-      <div className={styles.container2}></div>
+      <div className={styles.container2}>
+         <div className={styles.buttons}>asdfasd</div>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,38 @@
+{
+    "company": [
+        {
+            "name": "About"
+        },
+        {
+            "name": "Jobs"
+        },
+        {
+            "name": "For the Record"
+        }
+    ],
+    "communities": [
+        {
+            "name": "For Artists"
+        },
+        {
+            "name": "Developers"
+        },
+        {
+            "name": "Advertising"
+        },
+        {
+            "name": "Investors"
+        },
+        {
+            "name": "Vendors"
+        }
+    ],
+    "useful": [
+        {
+            "name": "Support"
+        },
+        {
+            "name": "Free Mobile App"
+        }
+    ]
+}

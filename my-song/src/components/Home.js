@@ -186,7 +186,7 @@ export const Home = () => {
                 <div className={styles.exp}>Anne-Marie</div>
                 <p className={styles.expmini}>Artist</p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song2}>
                 <img className={styles.artist} src={moira}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -194,7 +194,7 @@ export const Home = () => {
                 <div className={styles.exp}>Moira Dela Torre</div>
                 <p className={styles.expmini}>Artist</p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song3}>
                 <img className={styles.artist} src={john}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -202,7 +202,7 @@ export const Home = () => {
                 <div className={styles.exp}>John Legend</div>
                 <p className={styles.expmini}>Artist</p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song4}>
                 <img className={styles.artist} src={cam}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -210,7 +210,7 @@ export const Home = () => {
                 <div className={styles.exp}>Camila Cabello</div>
                 <p className={styles.expmini}>Artist</p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song5}>
                 <img className={styles.artist} src={ales}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -218,7 +218,7 @@ export const Home = () => {
                 <div className={styles.exp}>Alessia Cara</div>
                 <p className={styles.expmini}>Artist</p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song6}>
                 <img className={styles.artist} src={luka}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -226,7 +226,7 @@ export const Home = () => {
                 <div className={styles.exp}>Lukas Graham</div>
                 <p className={styles.expmini}>Artist</p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song7}>
                 <img className={styles.artist} src={anita}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -250,7 +250,7 @@ export const Home = () => {
                   Big rock tracks from 1984. Cover: Bruce Springsteen
                 </p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song2}>
                 <img className={styles.image} src={best85}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -260,7 +260,7 @@ export const Home = () => {
                   Big rock tracks from 1985. Cover: Jim Kerr of Simple...
                 </p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song3}>
                 <img className={styles.image} src={soft}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -270,7 +270,7 @@ export const Home = () => {
                   The best soft rock from the 1980s.
                 </p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song4}>
                 <img className={styles.image} src={best80}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -280,7 +280,7 @@ export const Home = () => {
                   Big rock tracks from 1980. Cover: AC/DC.
                 </p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song5}>
                 <img className={styles.image} src={happy80}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -290,7 +290,7 @@ export const Home = () => {
                   The best feel-good songs of the 1980s.
                 </p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song6}>
                 <img className={styles.image} src={deep80}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -300,7 +300,7 @@ export const Home = () => {
                   Digging deep into the history of 80s pop.
                 </p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song7}>
                 <img className={styles.image} src={best87}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -324,7 +324,7 @@ export const Home = () => {
                   Listen to easy songs from your favorite artists! Cove...
                 </p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song2}>
                 <img className={styles.image} src={chill}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -334,7 +334,7 @@ export const Home = () => {
                   Kick back to the best new and recent chill hits.
                 </p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song3}>
                 <img className={styles.image} src={zone}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -344,7 +344,7 @@ export const Home = () => {
                   Chilled songs that you are familiar with - no surprises!
                 </p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song4}>
                 <img className={styles.image} src={aco}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -354,7 +354,7 @@ export const Home = () => {
                   Instant classics from over the years loaded into one...
                 </p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song5}>
                 <img className={styles.image} src={you}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -364,7 +364,7 @@ export const Home = () => {
                   It's just us—and this awesome alt soundtrack.
                 </p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song6}>
                 <img className={styles.image} src={jazz}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>
@@ -374,7 +374,7 @@ export const Home = () => {
                   Soft instrumental Jazz for all your activities.
                 </p>
               </div>
-              <div className={styles.song}>
+              <div className={styles.song7}>
                 <img className={styles.image} src={lofi}></img>
                 <div className={styles.play}>
                   <GrPlayFill className={styles.icon}/>

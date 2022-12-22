@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Menu } from "./components/Menu";
 import { Home } from "./components/Home";
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 import Search from "./components/pages/Search";
 import YourLibrary from "./components/pages/YourLibrary";
 import CreatePlaylist from "./components/pages/CreatePlaylist";
@@ -32,7 +33,7 @@ function App() {
           <Route path="/MyPlaylist5" element={<MyPlaylist5 />} />
         </Routes>
       </BrowserRouter>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
