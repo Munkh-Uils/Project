@@ -20,6 +20,10 @@ app.get("/", (req, res) => {
   res.send("Hello World :))");
 });
 
+app.delete("/:id", (req, res) => {
+  res.send("Deleted");
+});
+
 app.listen(port, () => {
   console.log("Server running at:", port);
 });

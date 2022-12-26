@@ -11,10 +11,22 @@ exports.getSong = async (req, res) => {
   const playlistId = req.query.playlistId;
 
   if (playlistId) {
-    const result = await Song.find({playlistId});
+    const result = await Song.find({ playlistId });
     return res.send(result);
   }
 
-  const result = await Song.fing({});
+  const result = await Song.find({});
   res.send(result);
+};
+
+exports.deleteSong = async (req, res) => {
+  const id = req.params.id;
+  await Song.deleteOne({ _id: id });
+  res.send("deleted");
+};
+
+exports.AddToPlaylist = async (req, res) => {
+  const id = req.params.id;
+  await Song.findByIdAndUpdate(id);
+  res.send("updated");
 };
