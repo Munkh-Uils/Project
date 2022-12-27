@@ -47,12 +47,67 @@ import alone from "./assets/alone.jpeg";
 import edshee from "./assets/edshee.jpeg";
 import guilty from "./assets/guilty.jpeg";
 import { GrPlayFill } from "react-icons/gr";
-
+import { useNavigate } from "react-router-dom";
+import {
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+import { useEffect, useState } from "react";
+import { auth } from "./config";
+import axios from "axios";
 export const Home = () => {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        navigate("/signup");
+        console.log("Signed out successfully");
+      })
+      .catch((error) => {});
+  };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      console.log(user);
+      if (user) {
+        setUser(user);
+        const uid = user.uid;
+        console.log(user);
+        console.log("uid", uid);
+      } else {
+        setUser(null);
+        navigate("/login");
+        console.log("user is logged out");
+      }
+    });
+  }, []);
+
+  const createPlaylist = () => {
+    axios
+      .post("http://localhost:3000/playlists", {
+        title: "Uils's ...",
+        description: "String",
+        creatorId: user.uid,
+        isPrivate: true,
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  };
   return (
     <div className={styles.container}>
       <div className={styles.container2}>
         <div className={styles.buttons}>
+          <button type="submit" onClick={handleLogout}>
+            Log out
+          </button>
+          <button type="submit" onClick={createPlaylist}>
+          Create Playlist
+          </button>
+          {user && <p>{user.email}</p>}
           {/* Recently Played */}
           <div className={styles.button}>
             <h1 className={styles.text}>Recently played</h1>
@@ -60,7 +115,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={jazz}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Jazz in the Background</div>
                 <p className={styles.expmini}>
@@ -70,7 +125,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={all}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>All Out 80s</div>
                 <p className={styles.expmini}>
@@ -86,7 +141,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={ed}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Daily Mix 1</div>
                 <p className={styles.expmini}>
@@ -96,7 +151,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={wh}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Daily Mix 2</div>
                 <p className={styles.expmini}>
@@ -112,7 +167,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={global}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Top Songs-Global</div>
                 <p className={styles.expmini}>
@@ -122,7 +177,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={usa}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Top Songs - USA</div>
                 <p className={styles.expmini}>
@@ -132,7 +187,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={top50global}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Top 50 - Global</div>
                 <p className={styles.expmini}>
@@ -142,7 +197,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={top50usa}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Top 50 - USA</div>
                 <p className={styles.expmini}>
@@ -152,7 +207,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={viral50global}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Viral 50 - Global</div>
                 <p className={styles.expmini}>
@@ -162,7 +217,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={viral50usa}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Viral 50 - USA</div>
                 <p className={styles.expmini}>
@@ -181,7 +236,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.artist} src={anne}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Anne-Marie</div>
                 <p className={styles.expmini}>Artist</p>
@@ -189,7 +244,7 @@ export const Home = () => {
               <div className={styles.song2}>
                 <img className={styles.artist} src={moira}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Moira Dela Torre</div>
                 <p className={styles.expmini}>Artist</p>
@@ -197,7 +252,7 @@ export const Home = () => {
               <div className={styles.song3}>
                 <img className={styles.artist} src={john}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>John Legend</div>
                 <p className={styles.expmini}>Artist</p>
@@ -205,7 +260,7 @@ export const Home = () => {
               <div className={styles.song4}>
                 <img className={styles.artist} src={cam}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Camila Cabello</div>
                 <p className={styles.expmini}>Artist</p>
@@ -213,7 +268,7 @@ export const Home = () => {
               <div className={styles.song5}>
                 <img className={styles.artist} src={ales}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Alessia Cara</div>
                 <p className={styles.expmini}>Artist</p>
@@ -221,7 +276,7 @@ export const Home = () => {
               <div className={styles.song6}>
                 <img className={styles.artist} src={luka}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Lukas Graham</div>
                 <p className={styles.expmini}>Artist</p>
@@ -229,7 +284,7 @@ export const Home = () => {
               <div className={styles.song7}>
                 <img className={styles.artist} src={anita}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Anita Baker</div>
                 <p className={styles.expmini}>Artist</p>
@@ -243,7 +298,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={best}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Best of Rock: 1984</div>
                 <p className={styles.expmini}>
@@ -253,7 +308,7 @@ export const Home = () => {
               <div className={styles.song2}>
                 <img className={styles.image} src={best85}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Best of Rock: 1985</div>
                 <p className={styles.expmini}>
@@ -263,7 +318,7 @@ export const Home = () => {
               <div className={styles.song3}>
                 <img className={styles.image} src={soft}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>80s Soft Rock</div>
                 <p className={styles.expmini}>
@@ -273,7 +328,7 @@ export const Home = () => {
               <div className={styles.song4}>
                 <img className={styles.image} src={best80}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Best of Rock: 1980</div>
                 <p className={styles.expmini}>
@@ -283,7 +338,7 @@ export const Home = () => {
               <div className={styles.song5}>
                 <img className={styles.image} src={happy80}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Happy 80s</div>
                 <p className={styles.expmini}>
@@ -293,7 +348,7 @@ export const Home = () => {
               <div className={styles.song6}>
                 <img className={styles.image} src={deep80}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Deep Dive: 80s Pop</div>
                 <p className={styles.expmini}>
@@ -303,7 +358,7 @@ export const Home = () => {
               <div className={styles.song7}>
                 <img className={styles.image} src={best87}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Best of Rock: 1987</div>
                 <p className={styles.expmini}>Big rock tracks from 1987.</p>
@@ -317,7 +372,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={softpo}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Soft Pop Hits</div>
                 <p className={styles.expmini}>
@@ -327,7 +382,7 @@ export const Home = () => {
               <div className={styles.song2}>
                 <img className={styles.image} src={chill}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Chill Hits</div>
                 <p className={styles.expmini}>
@@ -337,7 +392,7 @@ export const Home = () => {
               <div className={styles.song3}>
                 <img className={styles.image} src={zone}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Comfort Zone</div>
                 <p className={styles.expmini}>
@@ -347,7 +402,7 @@ export const Home = () => {
               <div className={styles.song4}>
                 <img className={styles.image} src={aco}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Acoustic Hits: Oldies ...</div>
                 <p className={styles.expmini}>
@@ -357,7 +412,7 @@ export const Home = () => {
               <div className={styles.song5}>
                 <img className={styles.image} src={you}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>You & Me</div>
                 <p className={styles.expmini}>
@@ -367,7 +422,7 @@ export const Home = () => {
               <div className={styles.song6}>
                 <img className={styles.image} src={jazz}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Jazz in the Background</div>
                 <p className={styles.expmini}>
@@ -377,7 +432,7 @@ export const Home = () => {
               <div className={styles.song7}>
                 <img className={styles.image} src={lofi}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>lofi beats</div>
                 <p className={styles.expmini}>
@@ -393,7 +448,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={shower}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Songs to Sing in the S...</div>
                 <p className={styles.expmini}>
@@ -403,7 +458,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={indie}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Sing-Along Indie Hits</div>
                 <p className={styles.expmini}>
@@ -413,7 +468,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={karital}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Karaoke Italiano</div>
                 <p className={styles.expmini}>
@@ -423,7 +478,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={claold}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Classic Oldies</div>
                 <p className={styles.expmini}>
@@ -433,7 +488,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={karesp}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Karaoke en Español</div>
                 <p className={styles.expmini}>
@@ -443,7 +498,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={guilty}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Guilty Pleasures</div>
                 <p className={styles.expmini}>
@@ -453,7 +508,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={pade}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Party Deluxe</div>
                 <p className={styles.expmini}>
@@ -469,7 +524,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={life}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Life Sucks</div>
                 <p className={styles.expmini}>
@@ -479,7 +534,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={vibes}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Good Vibes</div>
                 <p className={styles.expmini}>
@@ -489,7 +544,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={sad}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>sad hour</div>
                 <p className={styles.expmini}>
@@ -499,7 +554,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={comfort}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Comfort Zone</div>
                 <p className={styles.expmini}>
@@ -515,7 +570,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={booster}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Mood Booster</div>
                 <p className={styles.expmini}>
@@ -525,7 +580,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={ultimate}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>The Ultimate Hit Mix</div>
                 <p className={styles.expmini}>
@@ -535,7 +590,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={alone}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>Alone Again</div>
                 <p className={styles.expmini}>
@@ -545,7 +600,7 @@ export const Home = () => {
               <div className={styles.song}>
                 <img className={styles.image} src={edshee}></img>
                 <div className={styles.play}>
-                  <GrPlayFill className={styles.icon}/>
+                  <GrPlayFill className={styles.icon} />
                 </div>
                 <div className={styles.exp}>This is Ed Sheeran</div>
                 <p className={styles.expmini}>

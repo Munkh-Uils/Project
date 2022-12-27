@@ -1,3 +1,4 @@
+const { Playlist } = require("../models/playlistModel");
 const { Song } = require("../models/songModel");
 
 exports.createSong = async (req, res) => {
@@ -25,8 +26,14 @@ exports.deleteSong = async (req, res) => {
   res.send("deleted");
 };
 
-exports.AddToPlaylist = async (req, res) => {
-  const id = req.params.id;
-  await Song.findByIdAndUpdate(id);
-  res.send("updated");
+exports.addToPlaylist = async (req, res) => {
+  const playlistId = req.query.playlistId;
+  const songId = req.params.id;
+
+  const playlist = await Playlist.findById(playlistId);
+  playlist.songs.push(songId);
+
+  await playlist.save();
+
+  res.send(playlist);
 };

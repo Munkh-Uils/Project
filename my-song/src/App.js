@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from "./components/pages/Signup";
-import { Login } from "./components/pages/Login";
+import Login from "./components/pages/Login";
 import { Menu } from "./components/Menu";
 import { Home } from "./components/Home";
 import { Header } from "./components/Header";
@@ -20,8 +20,8 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Menu />
-        <Header />
+        {/* <Menu />
+        <Header /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
