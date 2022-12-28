@@ -1,0 +1,243 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1f1f1f;
+  }
+  .container2 {
+    display: flex;
+    margin-left: 385px;
+    height: 1000vh;
+    background-color: #121212;
+  }
+  .buttons {
+    width: 100vw;
+    height: 1000vh;
+    margin-top: 65px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    color: white;
+  }
+  .button {
+    width: 100vw;
+    height: 385px;
+  }
+  .texts {
+    width: 100vw;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .text {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .show {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgb(158, 158, 158)
+  }
+  .songs {
+    display: flex;
+    margin-top: 22px;
+    height: 287px;
+  }
+  .song {
+    display: grid;
+    transition: 300ms;
+    width: 209.5px;
+    height: 302px;
+    background-color: #181818;
+    border-radius: 10px;
+    margin-right: 22px;
+    padding: 15px;
+  }
+  .song2 {
+    display: grid;
+    transition: 300ms;
+    width: 209.5px;
+    height: 302px;
+    background-color: #181818;
+    border-radius: 10px;
+    margin-right: 22px;
+    padding: 15px;
+  }
+  .song3 {
+    display: grid;
+    transition: 300ms;
+    width: 209.5px;
+    height: 302px;
+    background-color: #181818;
+    border-radius: 10px;
+    margin-right: 22px;
+    padding: 15px;
+  }
+  .song4 {
+    display: grid;
+    transition: 300ms;
+    width: 209.5px;
+    height: 302px;
+    background-color: #181818;
+    border-radius: 10px;
+    margin-right: 22px;
+    padding: 15px;
+  }
+  .song5 {
+    display: grid;
+    transition: 300ms;
+    width: 209.5px;
+    height: 302px;
+    background-color: #181818;
+    border-radius: 10px;
+    margin-right: 22px;
+    padding: 15px;
+  }
+  .song6 {
+    display: grid;
+    transition: 300ms;
+    width: 209.5px;
+    height: 302px;
+    background-color: #181818;
+    border-radius: 10px;
+    margin-right: 22px;
+    padding: 15px;
+  }
+  .song7 {
+    display: grid;
+    overflow: 1;
+    transition: 300ms;
+    width: 209.5px;
+    height: 302px;
+    background-color: #181818;
+    border-radius: 10px;
+    margin-right: 22px;
+    padding: 15px;
+  }
+  .image {
+    border-radius: 5px;
+    width: 182px;
+    height: 182px;
+  }
+  .exp {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: var(--font-family,CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif));;
+  }
+  .expmini {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(158, 158, 158);
+  }
+  .song:hover {
+    background-color:rgb(46, 46, 46);
+  }
+  .song:hover .play {
+    opacity: 1;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ed760;
+  }
+  .song2:hover {
+    background-color:rgb(46, 46, 46);
+  }
+  .song2:hover .play {
+    opacity: 1;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ed760;
+  }
+  .song3:hover {
+    background-color:rgb(46, 46, 46);
+  }
+  .song3:hover .play {
+    opacity: 1;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ed760;
+  }
+  .song4:hover {
+    background-color:rgb(46, 46, 46);
+  }
+  .song4:hover .play {
+    opacity: 1;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ed760;
+  }
+  .song5:hover {
+    background-color:rgb(46, 46, 46);
+  }
+  .song5:hover .play {
+    opacity: 1;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ed760;
+  }
+  .song6:hover {
+    background-color:rgb(46, 46, 46);
+  }
+  .song6:hover .play {
+    opacity: 1;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ed760;
+  }
+  .song7:hover {
+    background-color:rgb(46, 46, 46);
+  }
+  .song7:hover .play {
+    opacity: 1;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ed760;
+  }
+  .play {
+    transition: 300ms;
+    position: relative;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    width: 50px;
+    height: 50px;
+    margin-top: -60px;
+    margin-left: 120px;
+    border-radius: 50%;
+  }
+  .icon {
+    margin-left: 3px;
+    width: 18px;
+    height: 18px;
+  }
+  .artist {
+    border-radius: 50%;
+    width: 182px;
+    height: 182px;
+  }
+  /* @media only screen and (max-width: 2015px) {
+    .song7 {
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 1785px) {
+    .song6 {
+      display: none;
+    }
+  } */

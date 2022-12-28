@@ -4,6 +4,7 @@ import Signup from "./components/pages/Signup";
 import Login from "./components/pages/Login";
 import { Menu } from "./components/Menu";
 import { Home } from "./components/Home";
+import { Open } from "./components/Open";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import Search from "./components/pages/Search";
@@ -20,12 +21,13 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        {/* <Menu />
-        <Header /> */}
+        <Menu />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/open" element={<Open />} />
           <Route path="/Search" element={<Search />} />
           <Route path="/YourLibrary" element={<YourLibrary />} />
           <Route path="/CreatePlaylist" element={<CreatePlaylist />} />

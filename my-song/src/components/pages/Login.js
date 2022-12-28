@@ -1,6 +1,6 @@
-import styles from "../styles/YourLibrary.module.css";
+import styles from "../styles/Login.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../config";
 
@@ -25,14 +25,9 @@ const Login = () => {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
       });
-      // signOut(auth).then(() => {
-      //   // Sign-out successful.
-      // }).catch((error) => {
-      //   // An error happened.
-      // });
   };
   return (
-    <div>
+    <div className={styles.container}>
       <div>
         <h1>Log in</h1>
         <form>

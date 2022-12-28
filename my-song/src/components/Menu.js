@@ -10,24 +10,6 @@ import { BsPlusSquareFill } from "react-icons/bs";
 import { useState, useEffect } from "react";
 
 export const Menu = () => {
-  const [data, setData] = useState(null);
-  const axios = require("axios");
-  // useEffect(() => {
-  //   axios
-  //     .get("https://6375fb74b5f0e1eb85fed196.mockapi.io/api/v1/users/14/")
-  //     .then(function (response) {
-  //       // handle success
-  //       console.log(response.data);
-  //       setData(response.data);
-  //     })
-  //     .catch(function (error) {
-  //       // handle error
-  //       console.log(error);
-  //     })
-  //     .then(function () {
-  //       // always executed
-  //     });
-  // }, []);
   return (
     <div className={styles.container}>
       <Link to="/">

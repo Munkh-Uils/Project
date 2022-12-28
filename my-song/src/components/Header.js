@@ -21,6 +21,12 @@ export const Header = () => {
               <TiArrowSortedDown className={styles.arrow} />
             </div>
           </div>
+          <button type="submit" >
+            Sign up
+          </button>
+          <button type="submit" >
+            Log in
+          </button> 
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import styles from "./styles/Home.module.css";
+import styles from "./styles/Open.module.css";
 import jazz from "./assets/jazz.jpeg";
 import all from "./assets/all.jpeg";
 import ed from "./assets/ed.jpeg";
@@ -46,67 +46,41 @@ import ultimate from "./assets/ultimate.jpeg";
 import alone from "./assets/alone.jpeg";
 import edshee from "./assets/edshee.jpeg";
 import guilty from "./assets/guilty.jpeg";
+import { useState } from "react";
 import { GrPlayFill } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { useEffect, useState } from "react";
+import { signOut } from "firebase/auth";
 import { auth } from "./config";
-import axios from "axios";
-export const Home = () => {
+export const Open = () => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    signOut(auth)
-      .then(() => {
-        navigate("/signup");
-        console.log("Signed out successfully");
-      })
-      .catch((error) => {});
-  };
-
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      console.log(user);
-      if (user) {
-        setUser(user);
-        const uid = user.uid;
-        console.log(user);
-        console.log("uid", uid);
-      } else {
-        setUser(null);
-        navigate("/open");
-        console.log("user is logged out");
-      }
+  const Login = () => {
+    signOut(auth).then(() => {
+      navigate("/login");
+      console.log("Signed out successfully");
     });
-  }, []);
-
-  const createPlaylist = () => {
-    axios
-      .post("http://localhost:3000/playlists", {
-        title: "Uils's ...",
-        description: "String",
-        creatorId: user.uid,
-        isPrivate: true,
-      })
-      .then((res) => {
-        console.log(res);
-      });
+  };
+  const Signup = () => {
+    signOut(auth).then(() => {
+      navigate("/signup");
+      console.log("Signed out successfully");
+    });
   };
   return (
     <div className={styles.container}>
       <div className={styles.container2}>
         <div className={styles.buttons}>
-          <button type="submit" onClick={handleLogout}>
-            Log out
+          <button type="submit" onClick={Signup}>
+            Sign up
           </button>
-          <button type="submit" onClick={createPlaylist}>
-            Create Playlist
+          <button type="submit" onClick={Login}>
+            Log in
           </button>
           {user && <p>{user.email}</p>}
           {/* Recently Played */}
           <div className={styles.button}>
-            <h1 className={styles.text}>Recently played</h1>
+            <h1 className={styles.text}>Recently played</h1>    
             <div className={styles.songs}>
               <div className={styles.song}>
                 <img className={styles.image} src={jazz}></img>
