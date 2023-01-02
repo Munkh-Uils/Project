@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../config";
+import spotify from "../assets/spotify.png";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -27,40 +28,67 @@ const Signup = () => {
       });
   };
   return (
-    <div>
-      <div>
-        <h1>Sign up</h1>
-        <form>
-          <div>
-            <label htmlFor="email-address">Email address</label>
-            <input
-              type="email"
-              label="Email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="Email address"
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              label="Create password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Password"
-            />
-          </div>
-          <button type="submit" onClick={onSubmit}>
-            Sign up
-          </button>
-        </form>
+    <div className={styles.container}>
+      <div className={styles.container2}>
+        <div className={styles.signup}>
+          <img className={styles.spotify} src={spotify}></img>
+          <h1 className={styles.text}>Sign up</h1>
+          <form>
+            <div>
+              <label className={styles.emtext} htmlFor="email-address">
+                Email address or username
+              </label>
+              <input
+                className={styles.email}
+                type="email"
+                label="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="Email address or username"
+              />
+            </div>
+            <div>
+              <label className={styles.patext} htmlFor="password">
+                Password
+              </label>
+              <input
+                className={styles.pass}
+                type="password"
+                label="Create password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder="Password"
+              />
+            </div>
+            <a className={styles.forgot}>Forgot your password?</a>
+            <div className={styles.rem}>
+              <div className={styles.remember}>
+                <input className={styles.check} type="checkbox" />
+                Remember me
+              </div>
+              <button
+                className={styles.button}
+                type="submit"
+                onClick={onSubmit}
+              >
+                Sign up
+              </button>
+            </div>
+            <div
+              style={{
+                width: "450px",
+                border: "0.5px solid grey",
+                marginTop: "25px",
+              }}
+            ></div>
+          </form>
 
-        <p>
-          Already have an account? <NavLink to="/login">Sign in</NavLink>
-        </p>
+          <p className={styles.nuguuduh}>
+            Already have an account?<NavLink to="/login">Sign in</NavLink>
+          </p>
+        </div>
       </div>
     </div>
   );

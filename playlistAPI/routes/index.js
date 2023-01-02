@@ -1,3 +1,6 @@
 const {playlistRoutes} = require("./playlistRoutes");
-exports.playlistRoutes = playlistRoutes;
-exports.songRoutes = require("./songRoutes").songRoutes;
+const {artistRoutes} = require("./artistRoutes");
+const {songRoutes} = require("./songRoutes");
+const {userRoutes} = require("./userRoutes");
+
+module.exports = {playlistRoutes, artistRoutes, songRoutes, userRoutes};

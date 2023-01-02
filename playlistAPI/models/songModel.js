@@ -1,8 +1,14 @@
 const { Schema, Types, model } = require("mongoose");
 
 const songSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    creator: {
+        type: Schema,
+    },
     playlistId : Types.ObjectId,
-    name: String,
     artist: String,
     duraction: String,
     creatorId: Types.ObjectId,
@@ -11,6 +17,6 @@ const songSchema = new Schema({
     isPrivates: Boolean,
 });
 
-const Song = model('Song', songSchema);
+const Song = model('song', songSchema);
 
 exports.Song = Song

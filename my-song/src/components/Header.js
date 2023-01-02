@@ -3,6 +3,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { AiOutlineUser } from "react-icons/ai";
 import { TiArrowSortedDown } from "react-icons/ti";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export const Header = () => {
   return (
@@ -15,18 +16,21 @@ export const Header = () => {
           </div>
           <div className={styles.buser}>
             <div className={styles.upgrade}>Upgrade</div>
-            <div className={styles.user}>
+          </div>
+          <div className={styles.dropdown}>
+            <div className={styles.dropbtn}>
               <AiOutlineUser className={styles.icon3} />
               Munkh-Uils
               <TiArrowSortedDown className={styles.arrow} />
             </div>
+            <div className={styles.dropdowncontent}>
+              <a href="#">Account</a>
+              <a href="#">Profile</a>
+              <a href="#">Download</a>
+              <a href="#">Settings</a>
+              <a className={styles.log} href="signup">Log out</a>
+            </div>
           </div>
-          <button type="submit" >
-            Sign up
-          </button>
-          <button type="submit" >
-            Log in
-          </button> 
         </div>
       </div>
     </div>

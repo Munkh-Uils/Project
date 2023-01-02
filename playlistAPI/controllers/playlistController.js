@@ -16,3 +16,9 @@ exports.getPlaylist = async (req, res) => {
   const result = await Playlist.findById(req.params.id).populate('songs');
   res.send(result);
 }
+
+exports.deletePlaylist = async (req, res) => {
+  const id = req.params.id;
+  await Playlist.deleteOne({ _id: id });
+  res.send("deleted");
+};
