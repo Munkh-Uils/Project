@@ -55,6 +55,7 @@ import axios from "axios";
 export const Home = () => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  const [data, setData] = useState();
 
   const handleLogout = () => {
     signOut(auth)
@@ -66,6 +67,11 @@ export const Home = () => {
   };
 
   useEffect(() => {
+      axios.get("http://localhost:3001/playlists")
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      });
     onAuthStateChanged(auth, (user) => {
       console.log(user);
       if (user) {
@@ -83,7 +89,7 @@ export const Home = () => {
 
   const createPlaylist = () => {
     axios
-      .post("http://localhost:3000/playlists", {
+      .post("http://localhost:3000" + "/playlists", {
         title: "Uils's ...",
         description: "String",
         creatorId: user.uid,
@@ -104,6 +110,13 @@ export const Home = () => {
             Create Playlist
           </button>
           {user && <p>{user.email}</p>}
+          {data&&data.map(
+            (item,index)=>{
+              return(
+                <div key={item.title+index}>{item.title}</div>
+              )
+            }
+          )}
           {/* Recently Played */}
           <div className={styles.button}>
             <h1 className={styles.text}>Recently played</h1>

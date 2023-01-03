@@ -71,12 +71,6 @@ export const Open = () => {
     <div className={styles.container}>
       <div className={styles.container2}>
         <div className={styles.buttons}>
-          <button type="submit" onClick={Signup}>
-            Sign up
-          </button>
-          <button type="submit" onClick={Login}>
-            Log in
-          </button>
           {user && <p>{user.email}</p>}
           {/* Recently Played */}
           <div className={styles.button}>

@@ -28,38 +28,67 @@ const Login = () => {
   };
   return (
     <div className={styles.container}>
-      <div>
-        <h1>Log in</h1>
-        <form>
-          <div>
-            <label htmlFor="email-address">Email address</label>
-            <input
-              type="email"
-              label="Email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="Email address"
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              label="Create password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Password"
-            />
-          </div>
-          <button type="submit" onClick={onLogin}>
-            Log in
-          </button>
-        </form>
-        <p>
-          Already have an account? <NavLink to="/signup">Sign up</NavLink>
-        </p>
+      <div className={styles.container2}>
+        <div className={styles.signup}>
+          <h1 className={styles.text}>Log in</h1>
+          <form>
+            <div>
+              <label className={styles.emtext} htmlFor="email-address">
+                Email address
+              </label>
+              <input
+                className={styles.email}
+                type="email"
+                label="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="Email address"
+              />
+            </div>
+            <div>
+              <label className={styles.patext} htmlFor="password">
+                Password
+              </label>
+              <input
+                className={styles.pass}
+                type="password"
+                label="Create password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder="Password"
+              />
+            </div>
+            <a className={styles.forgot}>Forgot your password?</a>
+            <div className={styles.rem}>
+              <div className={styles.remember}>
+                <input className={styles.check} type="checkbox" />
+                Remember me
+              </div>
+              <div className={styles.logbut}>
+                <button
+                  className={styles.button}
+                  type="submit"
+                  onClick={onLogin}
+                >
+                  LOG IN
+                </button>
+              </div>
+            </div>
+            <div
+              style={{
+                width: "450px",
+                border: "0.5px solid grey",
+                marginTop: "25px",
+              }}
+            ></div>
+          </form>
+          <p className={styles.dont}>Don't have an account?</p>
+          <NavLink to="/signup">
+            <button className={styles.nuguuduh} >SIGN UP FOR SPOTIFY</button>
+          </NavLink>
+        </div>
       </div>
     </div>
   );

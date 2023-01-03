@@ -1,7 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const connect = require("./config/db");
-const { playlistRoutes, songRoutes } = require("./routes");
+const {
+  playlistRoutes,
+  songRoutes,
+  artistRoutes,
+  userRoutes,
+} = require("./routes");
 require("dotenv").config();
 
 const app = express();
@@ -15,13 +20,11 @@ connect();
 
 app.use(playlistRoutes);
 app.use(songRoutes);
+app.use(artistRoutes);
+app.use(userRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Hello World :))");
-});
-
-app.delete("/:id", (req, res) => {
-  res.send("Deleted");
+  res.send("Hello world :))");
 });
 
 app.listen(port, () => {

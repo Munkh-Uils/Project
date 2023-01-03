@@ -1,9 +1,9 @@
 import styles from "../styles/Signup.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
+import { ThemeContext } from "../contexts/ThemeProvider";
+import React, { useState, useContext } from "react";
 import { auth } from "../config";
-import spotify from "../assets/spotify.png";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -31,7 +31,6 @@ const Signup = () => {
     <div className={styles.container}>
       <div className={styles.container2}>
         <div className={styles.signup}>
-          <img className={styles.spotify} src={spotify}></img>
           <h1 className={styles.text}>Sign up</h1>
           <form>
             <div>
@@ -86,7 +85,7 @@ const Signup = () => {
           </form>
 
           <p className={styles.nuguuduh}>
-            Already have an account?<NavLink to="/login">Sign in</NavLink>
+            Already have an account?<NavLink className={styles.switch} to="/login">Sign in</NavLink>
           </p>
         </div>
       </div>

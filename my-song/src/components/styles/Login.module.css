@@ -1,3 +1,141 @@
 .container {
-    margin-left: 500px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1f1f1f;
+}
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 385px;
+  height: 100vh;
+  background-color: white;
+}
+.signup {
+  align-items: center;
+  width: 450px;
+  height: 550px;
+}
+.text {
+  display: flex;
+  justify-content: center;
+}
+.email {
+  display: flex;
+  margin-bottom: 12px;
+  outline: #1f1f1f 3px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: spotify-circular, Helvetica, Arial, sans-serif;
+  width: 450px;
+  height: 55px;
+}
+.pass {
+  display: flex;
+  margin-bottom: 12px;
+  outline: #1f1f1f 3px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: spotify-circular, Helvetica, Arial, sans-serif;
+  width: 450px;
+  height: 55px;
+}
+.pass:focus {
+  border: 2.5px black solid;
+  border-radius: 4px;
+}
+.email:focus {
+  border: 2.5px black solid;
+  border-radius: 4px;
+}
+.emtext {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 900;
+  font-family: spotify-circular, Helvetica, Arial, sans-serif;
+}
+.patext {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 900;
+  font-family: spotify-circular, Helvetica, Arial, sans-serif;
+}
+.forgot {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: spotify-circular, Helvetica, Arial, sans-serif;
+}
+.forgot:hover {
+  text-decoration: underline;
+
+  color: black;
+}
+.rem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 450px;
+  height: 55px;
+}
+.remember {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.logbut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 128px;
+  height: 55px;
+}
+.check {
+  accent-color: rgb(1, 159, 1);
+  padding: 10px;
+  margin-right: 8px;
+}
+.button {
+  border: none;
+  background-color: var(--background-base, #1ed760);
+  font-family: spotify-circular, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  width: 124px;
+  height: 48px;
+  border-radius: 50px;
+}
+.button:hover {
+  width: 127px;
+  height: 51px;
+}
+.spotify {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  margin-bottom: 35px;
+}
+.dont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 800;
+  width: 450px;
+  height: 50px;
+}
+.nuguuduh {
+    width: 450px;
+    height: 50px;
+    border-radius: 50px;
+    color: rgb(105, 105, 105);
+    font-weight: 600;
+    background-color: white;
+    border: 1px solid rgb(128, 128, 128);
+}
+.nuguuduh:hover {
+    border: 1px solid black;
 }
