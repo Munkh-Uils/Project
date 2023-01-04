@@ -67,11 +67,6 @@ export const Home = () => {
   };
 
   useEffect(() => {
-      axios.get("http://localhost:3001/playlists")
-      .then((response) => {
-        console.log(response.data);
-        setData(response.data);
-      });
     onAuthStateChanged(auth, (user) => {
       console.log(user);
       if (user) {
@@ -110,13 +105,6 @@ export const Home = () => {
             Create Playlist
           </button>
           {user && <p>{user.email}</p>}
-          {data&&data.map(
-            (item,index)=>{
-              return(
-                <div key={item.title+index}>{item.title}</div>
-              )
-            }
-          )}
           {/* Recently Played */}
           <div className={styles.button}>
             <h1 className={styles.text}>Recently played</h1>

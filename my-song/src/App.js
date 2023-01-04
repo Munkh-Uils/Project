@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "./components/contexts/ThemeProvider";
+import { DataProvider } from "./components/contexts/DataProvider";
 import Signup from "./components/pages/Signup";
 import Login from "./components/pages/Login";
 import { Menu } from "./components/Menu";
@@ -23,7 +23,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <ThemeProvider>
+        <DataProvider>
           <Menu />
           <Header />
           <Routes>
@@ -42,7 +42,7 @@ function App() {
             <Route path="/MyPlaylist4" element={<MyPlaylist4 />} />
             <Route path="/MyPlaylist5" element={<MyPlaylist5 />} />
           </Routes>
-        </ThemeProvider>
+        </DataProvider>
       </BrowserRouter>
       <Footer />
     </div>

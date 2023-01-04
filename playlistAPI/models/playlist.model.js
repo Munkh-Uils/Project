@@ -9,17 +9,13 @@ const playlistSchema = new Schema({
     type: String,
     default: "",
   },
-  isPrivate: {
-    type: Boolean,
-    default: false,
-  },
   createdAt: {
     type: Date,
     default: Date.now(),
   },
-  creator: {
+  user: {
     type: Schema.Types.ObjectId,
-    required: true,
+    // required: true,
     ref: "User",
   },
   songs: [

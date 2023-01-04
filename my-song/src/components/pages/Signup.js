@@ -1,7 +1,7 @@
 import styles from "../styles/Signup.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { ThemeContext } from "../contexts/ThemeProvider";
+import { ThemeContext } from "../contexts/DataProvider";
 import React, { useState, useContext } from "react";
 import { auth } from "../config";
 

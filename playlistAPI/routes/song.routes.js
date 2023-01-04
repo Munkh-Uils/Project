@@ -9,7 +9,8 @@ router
   .get("/songs", songController.getSongs)
   .get("/song/:id", songController.getSong)
   .post("/songs", songController.createSong)
-  .put("/song/:id", () => {})
+  .put("songs/:id", () => {})
+  .put("/song/:id/artist", () => {})
   .delete("/song/:id", () => {});
 
 exports.songRoutes = router;
