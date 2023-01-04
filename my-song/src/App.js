@@ -11,7 +11,7 @@ import { Footer } from "./components/Footer";
 import Search from "./components/pages/Search";
 import SearchOpen from "./components/pages/SearchOpen";
 import YourLibrary from "./components/pages/YourLibrary";
-import CreatePlaylist from "./components/pages/CreatePlaylist";
+import CreatePlaylist from "./components/CreatePlaylist";
 import LikedSongs from "./components/pages/LikedSongs";
 import MyPlaylist1 from "./components/pages/MyPlaylist1";
 import MyPlaylist2 from "./components/pages/MyPlaylist2";
@@ -26,6 +26,7 @@ function App() {
         <DataProvider>
           <Menu />
           <Header />
+          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<Signup />} />
@@ -34,7 +35,6 @@ function App() {
             <Route path="/Srchopen" element={<SearchOpen />} />
             <Route path="/Search" element={<Search />} />
             <Route path="/YourLibrary" element={<YourLibrary />} />
-            <Route path="/CreatePlaylist" element={<CreatePlaylist />} />
             <Route path="/LikedSongs" element={<LikedSongs />} />
             <Route path="/MyPlaylist1" element={<MyPlaylist1 />} />
             <Route path="/MyPlaylist2" element={<MyPlaylist2 />} />
@@ -42,6 +42,7 @@ function App() {
             <Route path="/MyPlaylist4" element={<MyPlaylist4 />} />
             <Route path="/MyPlaylist5" element={<MyPlaylist5 />} />
           </Routes>
+          <CreatePlaylist />
         </DataProvider>
       </BrowserRouter>
       <Footer />

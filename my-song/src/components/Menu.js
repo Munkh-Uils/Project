@@ -10,10 +10,14 @@ import { RiSearchFill } from "react-icons/ri";
 import { MdOutlineLocalLibrary } from "react-icons/md";
 import { MdLocalLibrary } from "react-icons/md";
 import { BsPlusSquareFill } from "react-icons/bs";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useLocation } from "react-router-dom";
+import { DataContext } from "./contexts/DataProvider";
 
 export const Menu = () => {
+  const {create, setCreate} = useContext(DataContext);
+  console.log(create)
+
   const location = useLocation();
   return (
     <div className={styles.container}>
@@ -61,12 +65,12 @@ export const Menu = () => {
             </div>
           )}
         </Link>
-        <Link to="createplaylist" className={styles.link}>
+        <Link to="createplaylist" className={styles.link} onClick={() => setCreate(!create)} >
           <div className={styles.create}>
             <BsPlusSquareFill className={styles.icon} />
             <div className={styles.text}>Create Playlist</div>
           </div>
-        </Link>
+        </Link>   
         <Link to="likedsongs" className={styles.link}>
           {location.pathname === "/likedsongs" ? (
             <div className={styles.home}>

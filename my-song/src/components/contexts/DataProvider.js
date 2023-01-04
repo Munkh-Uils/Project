@@ -5,6 +5,7 @@ export const DataContext = createContext();
 
 export const DataProvider = (props) => {
   const [data, setData] = useState();
+  const [create, setCreate] = useState(false);
 
   useEffect(() => {
     axios.get("http://localhost:3001/playlists").then((response) => {
@@ -13,7 +14,7 @@ export const DataProvider = (props) => {
     });
   }, []);
 
-  return <DataContext.Provider value={{data, setData}}>{props.children}</DataContext.Provider>;
+  return <DataContext.Provider value={{data, setData, create, setCreate}}>{props.children}</DataContext.Provider>;
 };
 {
   /*

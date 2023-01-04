@@ -9,3 +9,43 @@
     height: 100vh;
     background-color: #171717;
   }
+  .create {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 65px;
+  }
+  .open {
+    width: 450px;
+    height: 250px;
+    border-radius: 25px;
+    background-color: white;
+  }
+  .open2 {
+    display: none;
+  }
+  .inputs {
+    display: block;
+    padding: 40px;
+  }
+  .input {
+    width: 350px;
+    height: 40px;
+    margin-bottom: 25px;
+    border-radius: 50px;
+    border: 1px solid grey;
+  }
+  .buttons {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+  }
+  .button {
+    border: 0;
+    border-radius: 50px;
+    width: 100px;
+    height: 50px;
+    background-color: rgb(201, 201, 201);
+  }
