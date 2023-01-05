@@ -71,6 +71,8 @@
 }
 .playlist {
   color: #b3b3b3;
+  font-size: 14px;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 .icon {

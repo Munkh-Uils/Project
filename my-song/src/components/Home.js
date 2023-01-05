@@ -84,7 +84,7 @@ export const Home = () => {
 
   const createPlaylist = () => {
     axios
-      .post("http://localhost:3000" + "/playlists", {
+      .post("http://localhost:3001" + "/playlists", {
         title: "Uils's ...",
         description: "String",
         creatorId: user.uid,
@@ -98,12 +98,6 @@ export const Home = () => {
     <div className={styles.container}>
       <div className={styles.container2}>
         <div className={styles.buttons}>
-          <button type="submit" onClick={handleLogout}>
-            Log out
-          </button>
-          <button type="submit" onClick={createPlaylist}>
-            Create Playlist
-          </button>
           {user && <p>{user.email}</p>}
           {/* Recently Played */}
           <div className={styles.button}>

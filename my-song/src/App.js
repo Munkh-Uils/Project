@@ -36,11 +36,6 @@ function App() {
             <Route path="/Search" element={<Search />} />
             <Route path="/YourLibrary" element={<YourLibrary />} />
             <Route path="/LikedSongs" element={<LikedSongs />} />
-            <Route path="/MyPlaylist1" element={<MyPlaylist1 />} />
-            <Route path="/MyPlaylist2" element={<MyPlaylist2 />} />
-            <Route path="/MyPlaylist3" element={<MyPlaylist3 />} />
-            <Route path="/MyPlaylist4" element={<MyPlaylist4 />} />
-            <Route path="/MyPlaylist5" element={<MyPlaylist5 />} />
           </Routes>
           <CreatePlaylist />
         </DataProvider>

@@ -15,8 +15,8 @@ import { useLocation } from "react-router-dom";
 import { DataContext } from "./contexts/DataProvider";
 
 export const Menu = () => {
-  const {create, setCreate} = useContext(DataContext);
-  console.log(create)
+  const { create, setCreate, data, setData } = useContext(DataContext);
+  console.log(create);
 
   const location = useLocation();
   return (
@@ -65,12 +65,16 @@ export const Menu = () => {
             </div>
           )}
         </Link>
-        <Link to="createplaylist" className={styles.link} onClick={() => setCreate(!create)} >
+        <Link
+          to="createplaylist"
+          className={styles.link}
+          onClick={() => setCreate(!create)}
+        >
           <div className={styles.create}>
             <BsPlusSquareFill className={styles.icon} />
             <div className={styles.text}>Create Playlist</div>
           </div>
-        </Link>   
+        </Link>
         <Link to="likedsongs" className={styles.link}>
           {location.pathname === "/likedsongs" ? (
             <div className={styles.home}>
@@ -88,21 +92,14 @@ export const Menu = () => {
       <div className={styles.dash}></div>
       <div className={styles.myplaylists}>
         <div className={styles.myplaylist}>
-          <Link to="myplaylist1" className={styles.link}>
-            <div className={styles.playlist}>My Playlist #1</div>
-          </Link>
-          <Link to="myplaylist2" className={styles.link}>
-            <div className={styles.playlist}>My Playlist #2</div>
-          </Link>
-          <Link to="myplaylist3" className={styles.link}>
-            <div className={styles.playlist}>My Playlist #3</div>
-          </Link>
-          <Link to="myplaylist4" className={styles.link}>
-            <div className={styles.playlist}>My Playlist #4</div>
-          </Link>
-          <Link to="myplaylist#5" className={styles.link}>
-            <div className={styles.playlist}>My Playlist #5</div>
-          </Link>
+          {data &&
+            data.map((item, index) => {
+              return (
+                <div className={styles.playlist}>
+                  <div key={item.title + index}>{item.name}</div>
+                </div>
+              );
+            })}
         </div>
       </div>
     </div>

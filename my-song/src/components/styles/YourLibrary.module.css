@@ -5,24 +5,50 @@
 }
 .container2 {
   display: flex;
+  flex-direction: column;
   margin-left: 385px;
   height: 100vh;
-  background-color: #1f1f1f;
+  background-color: #121212;
+  overflow-y: scroll;
 }
 .library {
-  width: 100vw;
+  width: 100%;
   height: 90vh;
   margin-top: 65px;
   padding-left: 30px;
   padding-right: 30px;
+  display: flex;
   padding-top: 15px;
   color: white;
 }
 .playlists {
   display: flex;
+  flex-wrap: wrap;
 }
 .playlist {
   width: 200px;
-  height: 300px;
-  border: 1px solid white;
+  height: 280px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #191919;
+  margin-right: 20px;
+}
+.icon {
+  width: 160px;
+  height: 160px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #464646;
+}
+.music {
+  width: 70px;
+  height: 70px;
+  color: rgb(168, 168, 168);
+}
+.title {
+  font-size: 20px;
+  font-weight: 600;
 }

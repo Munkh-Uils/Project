@@ -8,6 +8,6 @@ router
   .get("/playlist/:id", playlistController.getPlaylist)
   .post("/playlists", playlistController.createPlaylist)
   .put("/playlist/:id", playlistController.addToPlaylist)
-  .delete("/playlist/:id", () => {});
+  .delete("/playlist/:id", playlistController.deletePlaylist);
 
 exports.playlistRoutes = router;
