@@ -52,3 +52,13 @@
   font-size: 20px;
   font-weight: 600;
 }
+.delete {
+  border: 0;
+  width: 80px;
+  height: 40px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+.delete:hover {
+  background-color: rgb(199, 199, 199);
+}

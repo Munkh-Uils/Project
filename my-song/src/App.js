@@ -8,16 +8,12 @@ import { Home } from "./components/Home";
 import { Open } from "./components/Open";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import Lists from "./components/pages/Lists";
 import Search from "./components/pages/Search";
 import SearchOpen from "./components/pages/SearchOpen";
 import YourLibrary from "./components/pages/YourLibrary";
 import CreatePlaylist from "./components/CreatePlaylist";
 import LikedSongs from "./components/pages/LikedSongs";
-import MyPlaylist1 from "./components/pages/MyPlaylist1";
-import MyPlaylist2 from "./components/pages/MyPlaylist2";
-import MyPlaylist3 from "./components/pages/MyPlaylist3";
-import MyPlaylist4 from "./components/pages/MyPlaylist4";
-import MyPlaylist5 from "./components/pages/MyPlaylist5";
 
 function App() {
   return (
@@ -26,7 +22,6 @@ function App() {
         <DataProvider>
           <Menu />
           <Header />
-          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<Signup />} />
@@ -35,6 +30,7 @@ function App() {
             <Route path="/Srchopen" element={<SearchOpen />} />
             <Route path="/Search" element={<Search />} />
             <Route path="/YourLibrary" element={<YourLibrary />} />
+            <Route path="/playlist/:id" element={<Lists />} />
             <Route path="/LikedSongs" element={<LikedSongs />} />
           </Routes>
           <CreatePlaylist />
