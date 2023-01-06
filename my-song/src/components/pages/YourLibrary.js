@@ -29,22 +29,22 @@ const YourLibrary = (props) => {
             {data &&
               data.map((item, index) => {
                 return (
-                  <Link to={'/playlist/' + item._id}>
-                    <div className={styles.playlist}>
+                  <div className={styles.playlist}>
+                    <Link className={styles.list} to={"/playlist/" + item.name}>
                       <div className={styles.icon}>
                         <RiMusic2Line className={styles.music} />
                       </div>
-                      <div key={item.title + index}>{item.name}</div>
-                      <button
-                        className={styles.delete}
-                        onClick={() => {
-                          deletePlaylist(item._id);
-                        }}
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  </Link>
+                      <div key={item.name + index}>{item.name}</div>
+                    </Link>
+                    <button
+                      className={styles.delete}
+                      onClick={() => {
+                        deletePlaylist(item._id);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 );
               })}
           </div>

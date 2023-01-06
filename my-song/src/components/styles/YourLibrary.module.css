@@ -29,15 +29,19 @@
   width: 200px;
   height: 280px;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: #191919;
   margin-right: 20px;
+}
+.playlist:hover {
+  background-color: #262626;
+  transition: 200ms;
 }
 .icon {
   width: 160px;
   height: 160px;
-  border-radius: 5px;
-  margin-bottom: 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,4 +65,12 @@
 }
 .delete:hover {
   background-color: rgb(199, 199, 199);
+}
+.list {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+.list:hover {
+  color: white;
 }
