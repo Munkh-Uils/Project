@@ -5,16 +5,22 @@ export const DataContext = createContext();
 
 export const DataProvider = (props) => {
   const [data, setData] = useState();
+  const [song, setSong] = useState();
   const [create, setCreate] = useState(false);
+  const [add, setAdd] = useState(false);
 
   useEffect(() => {
     axios.get("http://localhost:3001/playlists").then((response) => {
       console.log(response.data);
       setData(response.data);
     });
+    axios.get("http://localhost:3001/songs").then((response) => {
+      console.log(response.data);
+      setSong(response.data)
+    })
   }, []);
 
-  return <DataContext.Provider value={{data, setData, create, setCreate}}>{props.children}</DataContext.Provider>;
+  return <DataContext.Provider value={{data, setData, create, setCreate, add, setAdd, song, setSong}}>{props.children}</DataContext.Provider>;
 };
 {
   /*

@@ -1,5 +1,6 @@
 import styles from "../styles/CreatePlaylist.module.css";
 import { useContext, useState } from "react";
+import { DataContext } from "./contexts/DataProvider";
 
 const CreatePlaylist = () => {
 

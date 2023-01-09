@@ -16,7 +16,7 @@ import { DataContext } from "./contexts/DataProvider";
 
 export const Menu = () => {
   const { create, setCreate, data, setData } = useContext(DataContext);
-  console.log(create);
+  // console.log(create);
 
   const location = useLocation();
   return (

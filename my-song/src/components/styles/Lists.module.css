@@ -4,19 +4,98 @@
   background-color: #1f1f1f;
 }
 .container2 {
-  display: flex;
   flex-direction: column;
+  display: flex;
   margin-left: 385px;
   height: 100vh;
   background-color: #121212;
   overflow-y: scroll;
 }
+.container3 {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 385px;
+  height: 100vh;
+  background-color: #121212;
+  overflow-y: scroll;
+}
+.songs {
+  display: block;
+  padding: 20px;
+  width: 400px;
+  height: 400px;
+  background-color: #191919;
+}
+.songss {
+  display: none;
+}
+.goy {
+  display: flex;
+  width: 360px;
+  height: 100px;
+}
+.getsongs {
+  width: 360px;
+  height: 250px;
+  margin-top: 10px;
+  padding: 10px;
+  display: block;
+  background-color: #242424;
+  border-radius: 5px;
+}
+.mapsongs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 340px;
+  height: 40px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  background-color: #333333;
+  color: white;
+}
+.plus {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  color: #707070;
+}
+.song {
+  margin-left: 5px;
+  font-size: 15px;
+}
+.goyl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  background-color: #242424;
+}
+.goyicon {
+  width: 50px;
+  height: 50px;
+  color: #494949;
+}
+.icon {
+  width: 200px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #464646;
+}
 .lists {
   width: 100%;
   height: 90vh;
-  display: flex;
   padding-top: 15px;
   color: white;
+}
+.listss {
+  display: none;
 }
 .top {
     display: flex;
@@ -45,16 +124,33 @@
     margin-left: 25px;
 }
 .playlist {
+  color: white;
     font-size: 11px;
     font-weight: 700;
     margin-bottom: -20px;
 }
 .name {
+  color: white;
     font-size: 100px;
     font-weight: 700;
 }
 .user {
+  color: white;
     margin-bottom: -50px;
     font-size: 13px;
     font-weight: 700;
+}
+.cont {
+  width: 100vw;
+  height: 500px;
+  padding: 30px;
+}
+.add {
+  width: 100px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: white;
+  color: black;
+  font-size: 15px;
+  font-weight: 600;
 }
