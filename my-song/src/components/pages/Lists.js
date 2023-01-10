@@ -4,6 +4,7 @@ import { DataContext } from "../contexts/DataProvider";
 import { useParams } from "react-router-dom";
 import { RiMusic2Line } from "react-icons/ri";
 import { AiFillPlusCircle } from "react-icons/ai";  
+import { MdClear } from "react-icons/md";  
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -13,6 +14,11 @@ const YourLibrary = () => {
 
   const Add = () => {
     setAdd(!add);
+  }
+
+  const AddSongs = () => {
+    axios
+      .put("http://localhost:3001/playlist/" + id)
   }
   console.log(data);
   console.log(add);
@@ -25,14 +31,15 @@ const YourLibrary = () => {
             <div className={styles.goyl}>
               <RiMusic2Line className={styles.goyicon} />
             </div>
-          </div>
+            <MdClear onClick={Add} className={styles.x} />
+          </div> 
           <div className={styles.getsongs}>
             {song &&
               song.map((item, index) => {
                 return (
                   <div className={styles.mapsongs}>
                       <div className={styles.song} key={item.name + index}>{item.name}</div>
-                      <AiFillPlusCircle className={styles.plus}/>
+                      <AiFillPlusCircle onClick={AddSongs} className={styles.plus}/>
                   </div>
                 );
               })}
