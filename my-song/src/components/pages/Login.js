@@ -1,12 +1,15 @@
 import styles from "../styles/Login.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { useContext } from "react";
+import { DataContext } from "../contexts/DataProvider";
 import React, { useState } from "react";
 import { auth } from "../config";
 
 const Login = () => {
+  const { user } = useContext(DataContext);
+  
   const navigate = useNavigate();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -86,7 +89,7 @@ const Login = () => {
           </form>
           <p className={styles.dont}>Don't have an account?</p>
           <NavLink to="/signup">
-            <button className={styles.nuguuduh} >SIGN UP FOR SPOTIFY</button>
+            <button className={styles.nuguuduh}>SIGN UP FOR SPOTIFY</button>
           </NavLink>
         </div>
       </div>

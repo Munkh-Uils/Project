@@ -47,69 +47,17 @@ import alone from "./assets/alone.jpeg";
 import edshee from "./assets/edshee.jpeg";
 import guilty from "./assets/guilty.jpeg";
 import { GrPlayFill } from "react-icons/gr";
-import { useNavigate } from "react-router-dom";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { useEffect, useState } from "react";
-import { auth } from "./config";
+import { useContext } from "react";
+import { DataContext } from "./contexts/DataProvider";
 import axios from "axios";
 export const Home = () => {
-  const [user, setUser] = useState(null);
-  const navigate = useNavigate();
-  const [data, setData] = useState();
+  
+  const { create, setCreate, data, setData, user, setUser } = useContext(DataContext);
 
-  const handleLogout = () => {
-    signOut(auth)
-      .then(() => {
-        navigate("/signup");
-        console.log("Signed out successfully");
-      })
-      .catch((error) => {});
-  };
-
-  useEffect(() => {
-      axios.get("http://localhost:3001/playlists")
-      .then((response) => {
-        console.log(response.data);
-        setData(response.data);
-      });
-    onAuthStateChanged(auth, (user) => {
-      console.log(user);
-      if (user) {
-        setUser(user);
-        const uid = user.uid;
-        console.log(user);
-        console.log("uid", uid);
-      } else {
-        setUser(null);
-        navigate("/open");
-        console.log("user is logged out");
-      }
-    });
-  }, []);
-
-  const createPlaylist = () => {
-    axios
-      .post("http://localhost:3000" + "/playlists", {
-        title: "Uils's ...",
-        description: "String",
-        creatorId: user.uid,
-        isPrivate: true,
-      })
-      .then((res) => {
-        console.log(res);
-      });
-  };
   return (
     <div className={styles.container}>
       <div className={styles.container2}>
         <div className={styles.buttons}>
-          <button type="submit" onClick={handleLogout}>
-            Log out
-          </button>
-          <button type="submit" onClick={createPlaylist}>
-            Create Playlist
-          </button>
-          {user && <p>{user.email}</p>}
           {data&&data.map(
             (item,index)=>{
               return(

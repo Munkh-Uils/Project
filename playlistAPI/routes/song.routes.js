@@ -1,5 +1,3 @@
-
-
 const express = require("express");
 const { songController } = require("../controllers");
 
@@ -11,6 +9,6 @@ router
   .post("/songs", songController.createSong)
   .put("songs/:id", () => {})
   .put("/song/:id/artist", () => {})
-  .delete("/song/:id", () => {});
+  .delete("/song/:id", songController.deleteSong);
 
 exports.songRoutes = router;

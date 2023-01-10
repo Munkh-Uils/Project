@@ -6,9 +6,13 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import { useLocation, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "./config";
+import { useContext } from "react";
+import { DataContext } from "./contexts/DataProvider";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const Header = () => {
+  const { user } = useContext(DataContext);
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -45,15 +49,21 @@ export const Header = () => {
             <div className={styles.header}>
               <div className={styles.a}>
                 <div className={styles.premium}>
-                  <a href="https://www.spotify.com/mn/premium/?utm_source=app&utm_medium=desktop&utm_campaign=upgrade">Premium</a>
+                  <a href="https://www.spotify.com/mn/premium/?utm_source=app&utm_medium=desktop&utm_campaign=upgrade">
+                    Premium
+                  </a>
                 </div>
                 <div className={styles.premium}>
                   <a href="https://support.spotify.com/mn/">Support</a>
                 </div>
                 <div className={styles.premium}>
-                  <a href="https://www.spotify.com/mn/download/mac/">Download</a>
+                  <a href="https://www.spotify.com/mn/download/mac/">
+                    Download
+                  </a>
                 </div>
-                <div className={styles.trash}></div>
+                <div className={styles.trash}>
+                  {user && <p>{user.email}</p>}
+                </div>
               </div>
               <div className={styles.silo}>
                 <div className={styles.signtop}>

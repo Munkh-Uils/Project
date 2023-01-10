@@ -5,12 +5,13 @@ import { RiMusic2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const YourLibrary = (props) => {
-  const { data, setData } = useContext(DataContext);
-  const deletePlaylist = (id) => {
-    console.log(id);
+const YourLibrary = () => {
+  const { data, setData, playlistId, setPlaylistId } = useContext(DataContext);
+  const listsId = () => {};
+  const deletePlaylist = (_id) => {
+    setPlaylistId(_id);
     axios
-      .delete("http://localhost:3001/playlist/" + id)
+      .delete("http://localhost:3001/playlist/" + _id)
       .then(() => {
         axios.get("http://localhost:3001/playlists").then((res) => {
           setData(res.data);
@@ -18,8 +19,8 @@ const YourLibrary = (props) => {
       })
       .catch((err) => console.log(err));
   };
-
   console.log(data);
+  console.log(playlistId);
 
   return (
     <div className={styles.container}>
@@ -29,12 +30,12 @@ const YourLibrary = (props) => {
             {data &&
               data.map((item, index) => {
                 return (
-                  <div className={styles.playlist}>
-                    <Link className={styles.list} to={"/playlist/" + item.name}>
+                  <div className={styles.playlist} key={index}>
+                    <Link className={styles.list} to={"/playlist/" + item._id}>
                       <div className={styles.icon}>
                         <RiMusic2Line className={styles.music} />
                       </div>
-                      <div key={item.name + index}>{item.name}</div>
+                      <div>{item.name}</div>
                     </Link>
                     <button
                       className={styles.delete}

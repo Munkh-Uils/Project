@@ -22,6 +22,7 @@ function App() {
         <DataProvider>
           <Menu />
           <Header />
+          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<Signup />} />
@@ -30,10 +31,10 @@ function App() {
             <Route path="/Srchopen" element={<SearchOpen />} />
             <Route path="/Search" element={<Search />} />
             <Route path="/YourLibrary" element={<YourLibrary />} />
+            <Route path="/CreatePlaylist" element={<CreatePlaylist />} />
             <Route path="/playlist/:id" element={<Lists />} />
             <Route path="/LikedSongs" element={<LikedSongs />} />
           </Routes>
-          <CreatePlaylist />
         </DataProvider>
       </BrowserRouter>
       <Footer />
