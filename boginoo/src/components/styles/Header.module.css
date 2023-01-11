@@ -1,0 +1,25 @@
+.container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100vw;
+    height: 80px;   
+}
+.how {
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 30px;
+    color: #02B589;
+}
+.login {
+    border: 0px;
+    border-radius: 50px;
+    width: 125px;
+    height: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 50px;
+    background-color: #02B589;
+    color: white;
+}

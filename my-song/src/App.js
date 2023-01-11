@@ -22,7 +22,6 @@ function App() {
         <DataProvider>
           <Menu />
           <Header />
-          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<Signup />} />

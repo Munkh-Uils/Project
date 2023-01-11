@@ -12,11 +12,14 @@ const Lists = ({ index }) => {
   const { id } = useParams();
   const [listData, setListData] = useState();
   const [state, setState] = useState([]);
+  const [songId, setSongId] = useState();
+  const [songName, setSongName] = useState([]);
 
   useEffect(() => {
     axios.get("http://localhost:3001/playlist/" + id).then((res) => {
       console.log(res.data);
       setListData(res.data);
+      setState(res.data.songs)
     });
   }, []);
 
@@ -25,20 +28,24 @@ const Lists = ({ index }) => {
   };
 
   const addSongs = ({ name, _id }) => {
-    console.log(name);
-    axios
-      .put("http://localhost:3001/playlist/" + id, {
-        id: _id,
-      })
-      .then((res) => {
-        console.log([...state, res.data]);
-        setState([...state, res.data]);
-      });
+      setSongName(name);
+      console.log(songName)
 
-    setAdd(!add);
-    console.log(_id);
-  };
+      console.log(name);
+      axios
+        .put("http://localhost:3001/playlist/" + id, {
+          id: _id,
+        })
+        .then(() => {
+          axios.get("http://localhost:3001/song/" + _id).then((res) => {
+          setState([...state, res.data]);
+        });
+        });
+      setAdd(!add);
+  }; 
+  
   console.log(add);
+  console.log(state)
 
   return (
     <div className={styles.container}>
@@ -57,7 +64,7 @@ const Lists = ({ index }) => {
                   <div className={styles.mapsongs} key={item.name + index}>
                     <div className={styles.song}>{item.name}</div>
                     <AiFillPlusCircle
-                      onClick={() => addSongs({ ...item })}
+                      onClick={() => addSongs ({ ...item })}
                       className={styles.plus}
                     />
                   </div>
@@ -80,8 +87,15 @@ const Lists = ({ index }) => {
             <button onClick={Add} className={styles.add}>
               Add Songs
             </button>
+            {state && state.map((item, index) => {
+                return (
+                  <div key={item.name + index}>
+                    <div className={styles.songname}>{item.name}</div>
+                  </div>
+                );
+              })}
           </div>
-        </div>
+        </div>  
       </div>
     </div>
   );

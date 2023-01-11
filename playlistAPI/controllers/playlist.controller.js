@@ -15,10 +15,7 @@ const getPlaylists = async (req, res) => {
 };
 
 const getPlaylist = async (req, res) => {
-  const result = await Playlist.findById(req.params.id).populate({
-    path: "songs",
-    populate: { path: "artist" },
-  });
+  const result = await Playlist.findById(req.params.id).populate("songs")
   res.send(result);
 };
 
