@@ -7,6 +7,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = (props) => {
     const [user, setUser] = useState(null);
+    const [shortUrl, setShortUrl] = useState();
     const [inputValue, setInputValue] = useState("");
 
     const navigate = useNavigate();
@@ -24,6 +25,8 @@ export const AuthProvider = (props) => {
                 console.log("user is logged out")
             }
         })
+        axios
+            .get("http://localhost:3002/")
     }, []);
     
     return (
