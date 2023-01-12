@@ -7,6 +7,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = (props) => {
     const [user, setUser] = useState(null);
+    const [inputValue, setInputValue] = useState("");
 
     const navigate = useNavigate();
 
@@ -24,24 +25,9 @@ export const AuthProvider = (props) => {
             }
         })
     }, []);
-
-    const login = (e, email, password) => {
-        e.preventDefault();
-
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                console.log(user);
-                navigate("/");
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message
-                console.log(errorCode, errorMessage);
-            })
-    };
+    
     return (
-        <AuthContext.Provider value={{user, setUser, login}}>
+        <AuthContext.Provider value={{user, setUser, inputValue, setInputValue}}>
             {props.children}
         </AuthContext.Provider>
     )
