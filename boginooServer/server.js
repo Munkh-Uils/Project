@@ -1,19 +1,24 @@
 const express = require("express");
 const cors = require("cors");
-const connect = require("./config/db");
 const router = require("./routes/url.route");
-require("dotenv").config();
-
-connect();
+const connectDb = require("./config/database");
 
 const app = express();
-app.use(express);
 
-app.use(cors());
+// Connect to Database
+connectDb();
+
+// Pre Middleware
 app.use(express.json());
+app.unsubscribe(express.urlencoded({ extended: true }));
+app.use(cors());
 
-app.use(router());
+// Routes
+app.use(router);
 
-app.listen(4000, () => {
-  console.log("Server running at:", 4000);
-});
+app.get("/", (req, res) => {
+  res.send("Hello World");
+})
+
+// Listen
+app.listen(3001, () => console.log("Server started on port 3001"));

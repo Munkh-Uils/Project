@@ -1,4 +1,3 @@
-
 const { Artist } = require("../models");
 
 const createArtist = async (req, res) => {

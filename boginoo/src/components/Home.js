@@ -6,7 +6,7 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { AuthContext } from "./context/Auth.Provider";
 
 export const Home = () => {
-    const {user, setInputValue, inputValue} = useContext(AuthContext);
+    const {user, setInputValue, inputValue, url} = useContext(AuthContext);
     const [copied, setCopied] = useState(false);
     const [shortenLink, setShortenLink] = useState("");
     const [value, setValue] = useState("");
@@ -38,6 +38,7 @@ export const Home = () => {
         }, 2000);
         return () => clearTimeout(timer);  
     }, [copied])
+    console.log(url);
 
     return (
         <div className={styles.container}>
@@ -75,6 +76,7 @@ export const Home = () => {
                             )}
                         </div>
                     </div>
+                    <div>{url}</div>
                 </div>
             </div>
         </div>
